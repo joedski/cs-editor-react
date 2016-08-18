@@ -1,17 +1,17 @@
-Skeleton: React + Redux with Bootstrap
-======================================
+CS Editor in React
+==================
 
-This is a simple skeleton to start out a barebones React + Redux app with Bootstrap styles.  For actual [React Bootstrap](react-bootstrap), do `npm install --save react-bootstrap`.
-
-
-
-Dependencies
-------------
-
-### Global Dev Deps
-
-- [`eslint-plugin-react`](https://github.com/yannickcr/eslint-plugin-react)
+Simple CS editor so people don't have to sully their hands with BBCode.  Maybe some time I'll build some sort of schema support to make it easier to customize.  For now, the interface is ad-hoc.  For now, CSs are saved in local storage, not to a server, so it's recommended users periodically save their CSs to their computer for safe keeping.
 
 
 
-[react-bootstrap]: https://react-bootstrap.github.io/
+Todo
+----
+
+- [ ] Fully edit the current CS
+	- [ ] Pictures list in Physical Form
+	- [ ] Fill out rest of form elements
+- [ ] Ability to choose from existing CSs, create new CSs, delete old CSs
+- [ ] Save CSs in a zip, in both json and BBCode form, and maybe markdown too so people can read it
+- [ ] Ability to import from JSON
+- [ ] Ability to import from MD or BBCode
