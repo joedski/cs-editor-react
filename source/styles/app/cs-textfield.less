@@ -1,0 +1,46 @@
+.cs-textfield {
+	position: relative;
+}
+
+// .cs-textfield:hover {
+// 	background: @gray-light;
+// }
+
+.cs-textfield--text {
+	z-index: 0;
+}
+
+.cs-textfield--text-label {
+	font-weight: bold;
+}
+
+.cs-textfield--text-value {
+}
+
+.cs-textfield--text-value__placeholder {
+	.text-muted();
+}
+
+.cs-textfield--form {
+	// .alert();
+	// .alert-info();
+	// padding: floor( @padding-base-vertical / 2 );
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	// Additional px for border.
+	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
+}
+
+.cs-textfield--form__hidden {
+	// .hidden();
+	visibility: hidden;
+}
+
+.cs-textfield--form-label {
+	font-weight: bold;
+	background: @body-bg;
+}

@@ -1,0 +1,59 @@
+.cs-title-textfield {
+	position: relative;
+}
+
+// .cs-title-textfield:hover {
+// 	background: @gray-light;
+// }
+
+.cs-title-textfield--text {
+	z-index: 0;
+}
+
+.cs-title-textfield--text-label {
+	font-weight: bold;
+}
+
+.cs-title-textfield--text-value {
+}
+
+.cs-title-textfield--text-value__placeholder {
+	.text-muted();
+}
+
+.cs-title-textfield--form {
+	// font-size: @font-size-h4;
+
+	// .alert();
+	// .alert-info();
+	// padding: floor( @padding-base-vertical / 2 );
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	// Additional px for border.
+	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
+}
+
+.cs-title-textfield--form__hidden {
+	// .hidden();
+	visibility: hidden;
+}
+
+.cs-title-textfield--form-label {
+	font-size: @font-size-h4;
+	font-weight: bold;
+	background: @body-bg;
+}
+
+.cs-title-textfield--form-input {
+	font-size: @font-size-h4;
+}
+
+.cs-title-textfield--form-label-control-group {
+	display: inline-block;
+	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
+	margin-right: @padding-base-horizontal;
+}

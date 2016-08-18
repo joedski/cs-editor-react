@@ -1,0 +1,20 @@
+/**
+ * Stuff to allow the content to fill the entire window.
+ * http://www.dave-woods.co.uk/100-height-layout-using-css/
+ */
+
+html, body {
+	height: 100%;
+}
+
+.full-window {
+	// Use min-height here when you want content to be able to expand past the bottom of the page,
+	// as would normal page content rather than a UI.
+	height: 100%;
+	max-height: 100%;
+}
+
+.full-window__height {
+	.container();
+	padding: 0;
+}

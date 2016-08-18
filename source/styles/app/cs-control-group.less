@@ -1,0 +1,24 @@
+.cs-control-group {
+	.flexbox();
+	.flexbox__row();
+	// .flexbox__padded-children();
+}
+
+.cs-control-group--subgroup {
+	.flexbox--child__flex();
+
+	margin-left: (@padding-base-flex / 2);
+	margin-right: (@padding-base-flex / 2);
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.cs-control-group--subgroup__fixed {
+	.flexbox--child__fixed();
+}

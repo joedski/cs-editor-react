@@ -1,0 +1,53 @@
+.cs-textarea {
+	position: relative;
+}
+
+// .cs-textarea:hover {
+// 	background: @gray-light;
+// }
+
+.cs-textarea--text {
+	z-index: 0;
+}
+
+.cs-textarea--text-label {
+	font-weight: bold;
+	border-bottom: 1px solid @gray-light;
+}
+
+.cs-textarea--text-value {
+}
+
+.cs-textarea--text-value__placeholder {
+	.text-muted();
+}
+
+.cs-textarea--form {
+	// .alert();
+	// .alert-info();
+	// padding: floor( @padding-base-vertical / 2 );
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	// Additional px for border.
+	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
+}
+
+.cs-textarea--form__hidden {
+	// .hidden();
+	visibility: hidden;
+}
+
+.cs-textarea--form-label {
+	font-weight: bold;
+	background: @body-bg;
+	padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+.cs-textarea--form-input {
+	border: 0 none transparent;
+	max-width: 100%;
+}

@@ -1,0 +1,12 @@
+
+.cs-control-button {
+	@button-padding-vertical: floor( @padding-base-vertical / 2 );
+	@button-padding-horizontal: floor( @padding-base-horizontal / 2 );
+
+	.btn();
+	.button-size( @button-padding-vertical, @button-padding-horizontal, inherit, inherit, @btn-border-radius-base );
+	.button-variant( inherit, @gray-light, transparent );
+
+	// margin: (0 - @button-padding-vertical) (0 - @button-padding-horizontal);
+	margin: (0 - @button-padding-vertical) 0;
+}

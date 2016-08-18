@@ -1,0 +1,168 @@
+/**
+ * General Layout
+ */
+
+.flexbox {
+	display: flex;
+	flex-wrap: nowrap;
+	// align-items: stretch; // this is the spec's default.
+}
+
+.flexbox__row {
+	flex-direction: row;
+}
+
+.flexbox__column {
+	flex-direction: column;
+}
+
+.flexbox__align-center {
+	align-items: center;
+}
+
+.flexbox__padded-box {
+	padding: @padding-base-flex;
+
+	& > & {
+		padding: 0;
+	}
+}
+
+.flexbox__padded-children {
+	.flexbox__row > & {
+		margin-left: (@padding-base-flex / 2);
+		margin-right: (@padding-base-flex / 2);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.flexbox__column > & {
+		margin-top: (@padding-base-flex / 2);
+		margin-bottom: (@padding-base-flex / 2);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.flexbox__padded {
+	.flexbox__padded-box();
+	.flexbox__padded-children();
+}
+
+.flexbox__children-fill {
+	> * {
+		flex-grow: 1;
+	}
+}
+
+.flexbox__children-center {
+	.flexbox__align-center();
+	justify-content: center;
+}
+
+.flexbox--child__flex {
+	flex: 1 1 auto;
+}
+
+.flexbox--child__grow {
+	flex-grow: 1;
+}
+
+.flexbox--child__shrink {
+	flex-shrink: 1;
+}
+
+.flexbox--child__fixed {
+	flex: 0 0 auto;
+}
+
+
+
+//////// Legacy Classes:
+
+.flex-row, .flex-column {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: stretch; // default value according to spec.
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-padded {
+	padding: (@padding-base-flex / 2);
+
+	> * {
+		margin: (@padding-base-flex / 2);
+	}
+}
+
+.flex-padded-children {
+	> * {
+		margin-left: (@padding-base-flex / 2);
+		margin-right: (@padding-base-flex / 2);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+/**
+ * Note: A better way to do this might be something like this:
+ * .flex-padded defines the normal padding as above.
+ * .flex-padded-nested defines nothing by itself.
+ * but, .flex-padded > .flex-padded-nested adds the negative margin.
+ * This allows a component to be freely defined as .flex-padded-nested without having to worry about
+ * popping outside of non-flex-padded things.
+ *
+ * The problem is that I'm not sure where this sits in BEM.
+ */
+
+.flex-padded-nested {
+	margin: (-1 * @padding-base-flex / 2);
+}
+
+.flex-children-fill {
+	> * {
+		flex-grow: 1;
+	}
+}
+
+.flex-children-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-item {
+	flex: 1 1 auto;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-fixed {
+	flex: 0 0 auto;
+}
