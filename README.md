@@ -9,8 +9,11 @@ Todo
 ----
 
 - [ ] Fully edit the current CS
+	- [ ] Delete Entries
 	- [ ] Pictures list in Physical Form
 	- [ ] Fill out rest of form elements
+- [ ] Undo previous action
+	- Note: Undoing a Field Update Action means actually undoing All the last field actions that applied to the same single field.
 - [ ] Ability to choose from existing CSs, create new CSs, delete old CSs
 - [ ] Save CSs in a zip, in both json and BBCode form, and maybe markdown too so people can read it
 - [ ] Ability to import from JSON

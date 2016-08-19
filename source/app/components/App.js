@@ -18,8 +18,10 @@ const mapCSState = state => ({
 const mapCSDispatch = dispatch => ({
 	onActivateField: fieldPath => dispatch( actions.activateField( fieldPath ) ),
 	onDeactivateField: fieldPath => dispatch( actions.deactivateField( fieldPath ) ),
+	onDeactivateCurrentField: () => dispatch( actions.deactivateCurrentField() ),
 	onUpdateField: ( fieldPath, value ) => dispatch( actions.updateField( fieldPath, value ) ),
 	onAddFieldEntry: ( fieldPath, fieldType ) => dispatch( actions.addFieldEntry( fieldPath, fieldType ) ),
+	onDeleteFieldEntry: ( fieldPath ) => dispatch( actions.deleteFieldEntry( fieldPath ) ),
 });
 
 const CurrentCSEditor = connect( mapCSState, mapCSDispatch )( CSEditor );
@@ -28,29 +30,26 @@ const App = ( props ) => {
 
 	return (
 		<div className="app-container full-window   flexbox flexbox__column">
-			<nav className="app-header-controls navbar navbar-default flexbox--child__fixed">
-				<div className="app-controls--brand navbar-header">
-					<span className="navbar-brand">CS Editor</span>
+			<nav className="app-header-controls navbar navbar-default navbar-static-top flexbox--child__fixed">
+				<div className="container-fluid">
+					<div className="app-controls--brand navbar-header">
+						<span className="navbar-brand">CS Editor</span>
+					</div>
+					<ul className="app-controls--main-controls navbar-nav nav">
+						<li className=""><a href="#non" className="">CS: { props.currentCS.name || "(Untitled)" }</a></li>
+						<li className=""><a href="#non" className="">Save CS</a></li>
+						<li className=""><a href="#non" className="">Save Zip of All CSs</a></li>
+					</ul>
 				</div>
-				<ul className="app-controls--main-controls navbar-nav nav">
-					<li className=""><a href="#non" className="">CS: { props.currentCS.name || "(Untitled)" }</a></li>
-					<li className=""><a href="#non" className="">Save CS</a></li>
-					<li className=""><a href="#non" className="">Save Zip of All CSs</a></li>
-				</ul>
 			</nav>
 
-			<div className="app-content   flexbox--child__grow   flexbox flexbox__padded-box flexbox__column">
-				<div className="form-group flexbox--child__fixed">
-					<input type="text" className="form-control input-lg" placeholder="Character's Name" />
-				</div>
-				<CurrentCSEditor />
-			</div>
+			<CurrentCSEditor />
 		</div>
 	);
 };
 
 App.propTypes = {
-	cs: React.PropTypes.any,
+	currentCS: React.PropTypes.any,
 };
 
 // NOTE: In a larger app you would (usually!) create separate connected components from

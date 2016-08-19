@@ -21,6 +21,13 @@ export const deactivateField = ( field, meta = {} ) => ({
 	meta
 });
 
+export const DEACTIVATE_CURRENT_FIELD = 'DEACTIVATE_CURRENT_FIELD';
+export const deactivateCurrentField = ( meta = {} ) => ({
+	type: DEACTIVATE_CURRENT_FIELD,
+	payload: {},
+	meta
+});
+
 //// Editor: CS
 
 export const UPDATE_FIELD = 'UPDATE_FIELD';
@@ -34,7 +41,14 @@ export const updateField = ( field, value, meta = {} ) => ({
 });
 
 // DELETE_FIELD_ENTRY
-// ADD_FIELD_ENTRY (Only adds to end.)
+export const DELETE_FIELD_ENTRY = 'DELETE_FIELD_ENTRY';
+export const deleteFieldEntry = ( field, meta = {} ) => ({
+	type: DELETE_FIELD_ENTRY,
+	payload: {
+		field,
+	},
+	meta,
+});
 
 export const ADD_FIELD_ENTRY = 'ADD_FIELD_ENTRY';
 export const addFieldEntry = ( field, fieldType, meta = {} ) => ({

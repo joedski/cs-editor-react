@@ -4,6 +4,8 @@ import * as actions from '../actions';
 import isEqual from 'lodash/fp/isEqual';
 import assocIn from 'lodash/fp/set';
 import getIn from 'lodash/fp/get';
+import dropRight from 'lodash/fp/dropRight';
+import last from 'lodash/fp/last';
 
 import * as entryTypes from '../entry-types';
 
@@ -26,9 +28,16 @@ const createInitialPhysicalForm = () => ({
 	description: '',
 });
 
-const createInitialInventoryItem = () => ({});
+const createInitialInventoryItem = () => ({
+	name: '',
+	description: '',
+});
 
-const createInitialParanormalAbility = () => ({});
+const createInitialParanormalAbility = () => ({
+	name: '',
+	description: '',
+	system: '',
+});
 
 const createInitialCS = () => ({
 	//// Preamble
@@ -87,6 +96,8 @@ function editor( state = initialEditor, action ) {
 	switch( action.type ) {
 		// TODO: Separate Editor State Reducer from Editor CS Reducer.
 
+		//// Editor: State
+
 		case actions.ACTIVATE_FIELD: {
 			return {
 				cs: state.cs,
@@ -109,6 +120,17 @@ function editor( state = initialEditor, action ) {
 			return state;
 		}
 
+		case actions.DEACTIVATE_CURRENT_FIELD: {
+			return {
+				cs: state.cs,
+				state: {
+					activeField: null
+				}
+			};
+		}
+
+		//// Editor: CS
+
 		case actions.UPDATE_FIELD: {
 			return {
 				state: state.state,
@@ -126,6 +148,19 @@ function editor( state = initialEditor, action ) {
 				state: state.state,
 				cs: assocIn( action.payload.field, newFieldValue, state.cs ),
 			};
+		}
+
+		case actions.DELETE_FIELD_ENTRY: {
+			let fieldEntryIndex = last( action.payload.field );
+			let field = dropRight( 1, action.payload.field );
+			let newFieldValue = getIn( field, state.cs ).slice( 0 );
+
+			newFieldValue.splice( fieldEntryIndex, 1 );
+
+			return {
+				state: state.state,
+				cs: assocIn( field, newFieldValue, state.cs ),
+			}
 		}
 
 		default: {

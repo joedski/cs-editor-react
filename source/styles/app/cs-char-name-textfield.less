@@ -1,27 +1,27 @@
-.cs-title-textfield {
+.cs-char-name-textfield {
 	position: relative;
 }
 
-// .cs-title-textfield:hover {
+// .cs-char-name-textfield:hover {
 // 	background: @gray-light;
 // }
 
-.cs-title-textfield--text {
+.cs-char-name-textfield--text {
 	z-index: 0;
 }
 
-.cs-title-textfield--text-label {
+.cs-char-name-textfield--text-label {
 	font-weight: bold;
 }
 
-.cs-title-textfield--text-value {
+.cs-char-name-textfield--text-value {
 }
 
-.cs-title-textfield--text-value__placeholder {
+.cs-char-name-textfield--text-value__placeholder {
 	.text-muted();
 }
 
-.cs-title-textfield--form {
+.cs-char-name-textfield--form {
 	// font-size: @font-size-h4;
 
 	// .alert();
@@ -34,27 +34,27 @@
 	left: 0;
 	right: 0;
 	// Additional px for border.
-	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
+	margin: (0 - @padding-base-vertical - 1px + (5px / 2)) 0 0;
 }
 
-.cs-title-textfield--form__hidden {
+.cs-char-name-textfield--form__hidden {
 	.hidden();
 	// visibility: hidden;
 }
 
-.cs-title-textfield--form-label {
-	// font-size: @font-size-h4;
-	font-size: inherit;
+.cs-char-name-textfield--form-label {
+	font-size: @font-size-h4;
+	// font-size: inherit;
 	font-weight: bold;
 	background: @body-bg;
 }
 
-.cs-title-textfield--form-input {
-	// font-size: @font-size-h4;
-	font-size: inherit;
+.cs-char-name-textfield--form-input {
+	font-size: @font-size-h4;
+	// font-size: inherit;
 }
 
-.cs-title-textfield--form-label-control-group {
+.cs-char-name-textfield--form-label-control-group {
 	display: inline-block;
 	margin: (0 - @padding-base-vertical - 1px) (0 - @padding-base-horizontal - 1px);
 	margin-right: @padding-base-horizontal;
