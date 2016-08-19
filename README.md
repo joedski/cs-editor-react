@@ -18,5 +18,6 @@ Todo
 - [ ] Ability to choose from existing CSs, create new CSs, delete old CSs
 - [ ] Save CSs in a zip, in both json and BBCode form, and maybe markdown too so people can read it
 - [ ] Ability to import from JSON
-- [ ] Ability to import from MD or BBCode
+- [ ] Ability to import from BBCode
+- [ ] Ability to import from MD
 - [ ] WYSIWYG editors
