@@ -37,8 +37,8 @@ const App = ( props ) => {
 					</div>
 					<ul className="app-controls--main-controls navbar-nav nav">
 						<li className=""><a href="#non" className="">CS: { props.currentCS.name || "(Untitled)" }</a></li>
-						<li className=""><a href="#non" className="">Save CS</a></li>
-						<li className=""><a href="#non" className="">Save Zip of All CSs</a></li>
+						<li className=""><a href="#non" className="">Save CS in Zip</a></li>
+						<li className=""><a href="#non" className="">Save All CSs in Zip</a></li>
 					</ul>
 				</div>
 			</nav>
